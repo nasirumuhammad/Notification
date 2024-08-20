@@ -42,8 +42,8 @@ export default function RegistrationForm() {
     }
     faculties();
   }, []);
-  function FetchDepartments(facultyID: string) {
-    fetchDepartment(facultyID).then((department: any) => {
+  function FetchDepartments() {
+    fetchDepartment().then((department: any) => {
       setdepartments(department);
     });
   }
@@ -131,7 +131,7 @@ export default function RegistrationForm() {
           <Select
             onValueChange={(value) => {
               setSelectedFaculty(value);
-              FetchDepartments(value);
+              FetchDepartments();
             }}
           >
             <SelectTrigger className="">
